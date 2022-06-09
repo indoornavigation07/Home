@@ -116,7 +116,7 @@ const panorama=(url)=>{
 		{
 		  id      : '1',
 		  
-		  panorama: 'https://github.com/shreeram3/img/blob/main/PANO_20220424_122029.jpg',
+		  panorama: 'https://i.postimg.cc/GtcVfn4G/PANO-20220424-122029.jpg',
 		  thumbnail: 'https://photo-sphere-viewer-data.netlify.app/assets/tour/key-biscayne-1-thumb.jpg',
 		  name    : 'One',
 		  links   : [
