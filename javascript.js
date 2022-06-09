@@ -139,7 +139,7 @@ const panorama=(url)=>{
 		},
 		{
 		  id      : '2',
-		  panorama: 'https://photo-sphere-viewer-data.netlify.app/assets/tour/key-biscayne-2.jpg',
+		  panorama: 'https://i.postimg.cc/GtcVfn4G/PANO-20220424-122029.jpg',
 		  thumbnail: 'https://photo-sphere-viewer-data.netlify.app/assets/tour/key-biscayne-2-thumb.jpg',
 		  name    : 'Two',
 		  links   : [
