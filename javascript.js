@@ -198,6 +198,8 @@ const panorama=(url)=>{
 		  panoData: { poseHeading: 328 },
 		},
 	  ], '2');
+
+	  const libmap =["",""]
 // new PhotoSphereViewer.Viewer({
 //   navbar:[
 //   {"visible":false}
