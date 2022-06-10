@@ -6,7 +6,9 @@
 	const currentposition = document.getElementById("current_position")
 	const searchlist = document.getElementById("search_bar");
 	const img = "https://i.ibb.co/DLm1gF4/parking.jpg"
-const searchinput = document.getElementById("searchinput")
+	const searchinput = document.getElementById("searchinput")
+
+
 searchinput.addEventListener('keyup',(e)=>{
 	const searchString = e.target.value.toLowerCase()
 	const filteredlist = list.filter((item)=>{
@@ -23,11 +25,10 @@ const mainpage=()=>{
 	const homepage = document.getElementById("homepage");
 	homepage.setAttribute("style","opacity :0; visiblity:hidden");
 	setTimeout(()=>{homepage.style.display = "none"; },200)
-	panorama(img)
+	backToHome(img)
 }
 
-const searchback=()=>{
-	
+const searchback=()=>{	
 	const exist = !!document.getElementById("searchlistexist");
 	if (exist === true){
 	const classname= "search_bar";
@@ -76,10 +77,16 @@ const objconverter=(object)=>{
 	newhave.innerHTML = flist;
 	searchlist.appendChild(newhave);}
 }
-const moveforward = (id) =>{
-	const ida=id.getAttribute("id");
-	const url = urllist[ida];
-	console.log(url)
+ // urls for library
+libimg=[".src/assert/img/lib/img1.jpg",".src/assert/img/lib/img1.jpg",".src/assert/img/lib/img1.jpg",".src/assert/img/lib/img1.jpg",".src/assert/img/lib/img1.jpg",".src/assert/img/lib/img1.jpg",]
+// urls for poster Exhibition
+peimg=[""]
+
+// url is a list
+const moveforward = (url) =>{
+	// const ida=id.getAttribute("id");
+	// const url = urllist[ida];
+	// console.log(url)
 	panorama(url);
 	searchlist.style.display="none";
 	floors.style.display = "";
@@ -87,7 +94,7 @@ const moveforward = (id) =>{
 	currentposition.style.display = "";
 }
 
-const panorama=(url)=>{
+const panorama=(imglist)=>{
 	exisit_file = !!document.getElementsByClassName("psv-canvas-container")
 	if (exisit_file == true){
 		document.getElementById("panorama").innerHTML=""
@@ -96,7 +103,7 @@ const panorama=(url)=>{
 	var viewer = new PhotoSphereViewer.Viewer({
 		container: 'panorama',
 		loadingImg: 'https://photo-sphere-viewer.js.org/assets/photosphere-logo.gif',
-		touchmoveTwoFingers: true,
+		touchmoveTwoFingers: false,
 		mousewheelCtrlKey: true,
 		caption    : 'Cape Florida Light, Key Biscayne <b>&copy; Pixexid</b>',
 		defaultLong: '100deg',
@@ -114,12 +121,12 @@ const panorama=(url)=>{
 	  
 	  virtualTour.setNodes([
 		{
-		  id      : '1',
-		  panorama: 'https://i.postimg.cc/GtcVfn4G/PANO-20220424-122029.jpg',
-		  thumbnail: 'https://photo-sphere-viewer-data.netlify.app/assets/tour/key-biscayne-1-thumb.jpg',
+		  id      : '0',
+		  panorama: imglist[0],
+		  thumbnail: imglist[0],
 		  name    : 'One',
 		  links   : [
-			{ nodeId: '2' },
+			{ nodeId: '1' },
 		  ],
 		  markers: [
 			{
@@ -133,101 +140,93 @@ const panorama=(url)=>{
 			  latitude: '35deg',
 			}
 		  ],
-		  position: [-80.156479, 25.666725, 3],
+		  position: [-80.156479, 25.666725, 2],
 		  panoData: { poseHeading: 327 },
 		},
 		{
-		  id      : '2',
-		  panorama: 'https://i.postimg.cc/GtcVfn4G/PANO-20220424-122029.jpg',
-		  thumbnail: 'https://photo-sphere-viewer-data.netlify.app/assets/tour/key-biscayne-2-thumb.jpg',
+		  id      : '1',
+		  panorama: imglist[1],
+		  thumbnail: imglist[1],
 		  name    : 'Two',
 		  links   : [
-			{ nodeId: '3' },
-			{ nodeId: '1' },
+			{ nodeId: '0' },
+			{ nodeId: '2' },
 		  ],
-		  position: [-80.156168, 25.666623, 3],
+		  position: [-80.156168, 25.666623, 2],
 		  panoData: { poseHeading: 318 },
 		},
 		{
-		  id      : '3',
-		  panorama: 'https://i.postimg.cc/GtcVfn4G/PANO-20220424-122029.jpg',
-		  thumbnail: 'https://photo-sphere-viewer-data.netlify.app/assets/tour/key-biscayne-3-thumb.jpg',
+		  id      : '2',
+		  panorama: imglist[2],
+		  thumbnail: imglist[2],
 		  name    : 'Three',
 		  links   : [
-			{ nodeId: '4' },
-			{ nodeId: '2' },
-			{ nodeId: '5' },
+			{ nodeId: '1' },
+			{ nodeId: '3' },
+
 		  ],
-		  position: [-80.155932, 25.666498, 5],
+		  position: [-80.155932, 25.666498, 2],
 		  panoData: { poseHeading: 328 },
 		},
 		{
-		  id      : '4',
-		  panorama: 'https://i.postimg.cc/GtcVfn4G/PANO-20220424-122029.jpg',
-		  thumbnail: 'https://photo-sphere-viewer-data.netlify.app/assets/tour/key-biscayne-4-thumb.jpg',
+		  id      : '3',
+		  panorama: imglist[3],
+		  thumbnail: imglist[3],
 		  name    : 'Four',
 		  links   : [
 			{ nodeId: '3' },
 			{ nodeId: '5' },
 		  ],
-		  position: [-80.156089, 25.666357, 3],
+		  position: [-80.156089, 25.666357, 2],
 		  panoData: { poseHeading: 78 },
 		},
 		{
-		  id      : '5',
-		  panorama: 'https://i.postimg.cc/GtcVfn4G/PANO-20220424-122029.jpg',
-		  thumbnail: 'https://photo-sphere-viewer-data.netlify.app/assets/tour/key-biscayne-5-thumb.jpg',
+		  id      : '4',
+		  panorama: imglist[4],
+		  thumbnail: imglist[4],
 		  name    : 'Five',
 		  links   : [
-			{ nodeId: '6' },
 			{ nodeId: '3' },
-			{ nodeId: '4' },
+			{ nodeId: '5' },
 		  ],
 		  position: [-80.156292, 25.666446, 2],
 		  panoData: { poseHeading: 190 },
 		},
 		{
-		  id      : '6',
-		  panorama: 'https://i.postimg.cc/GtcVfn4G/PANO-20220424-122029.jpg',
-		  thumbnail: 'https://photo-sphere-viewer-data.netlify.app/assets/tour/key-biscayne-6-thumb.jpg',
+		  id      : '5',
+		  panorama: imglist[5],
+		  thumbnail: imglist[5],
 		  name    : 'Six',
 		  links   : [
-			{ nodeId: '5' },
+			{ nodeId: '0' },
 		  ],
 		  position: [-80.156465, 25.666496, 2],
 		  panoData: { poseHeading: 328 },
 		},
 	  ], '2');
-
-	  const libmap =["",""]
-// new PhotoSphereViewer.Viewer({
-//   navbar:[
-//   {"visible":false}
-//   ],
-//   panorama: url,
-//   container: 'panorama',
-//   caption: 'Parc national du Mercantour <b>&copy; Damien Sorel</b>',
-//   loadingImg: 'https://photo-sphere-viewer.js.org/assets/photosphere-logo.gif',
-//   defaultLat: 0.3,
-//   touchmoveTwoFingers: true,
-//   mousewheelCtrlKey: true,
-// });
-
 document.querySelector(".psv-markers-svg-container").style.display = "none";
 document.querySelector(".psv-markers").style.display = "none";
 document.querySelector(".psv-navbar").style.display="none";
 }
 
+const backToHome=(url)=>{new PhotoSphereViewer.Viewer({
+	navbar:[
+	{"visible":false}
+	],
+	panorama: url,
+	container: 'panorama',
+	caption: 'Parc national du Mercantour <b>&copy; Damien Sorel</b>',
+	loadingImg: 'https://photo-sphere-viewer.js.org/assets/photosphere-logo.gif',
+	defaultLat: 0.3,
+	touchmoveTwoFingers: true,
+	mousewheelCtrlKey: true,
+  });}
+
 const back=()=>{
-	panorama(img);
+	backToHome(img);
 	searchbar.style.display="";
 	searchbar.className = "search_bar";
 	document.getElementById("searchlistexist").innerHTML = "";
 	droparrowimg.setAttribute("class","");
 }
 
-urllist = {
-	"a1":"https://photo-sphere-viewer-data.netlify.app/assets/sphere.jpg",
-	"a2":"https://i.ibb.co/DLm1gF4/parking.jpg",
-	"a3":"https://photo-sphere-viewer-data.netlify.app/assets/sphere.jpg",
-}
