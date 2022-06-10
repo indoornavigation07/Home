@@ -78,7 +78,7 @@ const objconverter=(object)=>{
 	searchlist.appendChild(newhave);}
 }
  // urls for library
-libimg=[".src/assert/img/lib/img1.jpg",".src/assert/img/lib/img1.jpg",".src/assert/img/lib/img1.jpg",".src/assert/img/lib/img1.jpg",".src/assert/img/lib/img1.jpg",".src/assert/img/lib/img1.jpg",]
+libimg=["src/assert/img/lib/img1.jpg","src/assert/img/lib/img1.jpg","src/assert/img/lib/img1.jpg","src/assert/img/lib/img1.jpg","src/assert/img/lib/img1.jpg","src/assert/img/lib/img1.jpg",]
 // urls for poster Exhibition
 peimg=[""]
 
