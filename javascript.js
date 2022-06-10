@@ -5,7 +5,7 @@
 	const arrows = document.getElementById('arrows')
 	const currentposition = document.getElementById("current_position")
 	const searchlist = document.getElementById("search_bar");
-	const img = "https://i.ibb.co/DLm1gF4/parking.jpg"
+	const img = "src/assert/img/lib/img1.jpg"
 	const searchinput = document.getElementById("searchinput")
 
 
@@ -78,7 +78,7 @@ const objconverter=(object)=>{
 	searchlist.appendChild(newhave);}
 }
  // urls for library
-libimg=["src/assert/img/lib/img1.jpg","src/assert/img/lib/img1.jpg","src/assert/img/lib/img1.jpg","src/assert/img/lib/img1.jpg","src/assert/img/lib/img1.jpg","src/assert/img/lib/img1.jpg",]
+libimg=["src/assert/img/lib/img1.jpg","src/assert/img/lib/img2.jpg","src/assert/img/lib/img3.jpg","src/assert/img/lib/img4.jpg","src/assert/img/lib/img5.jpg","src/assert/img/lib/img6.jpg","src/assert/img/lib/img7.jpg","src/assert/img/lib/img8.jpg"]
 // urls for poster Exhibition
 peimg=[""]
 
